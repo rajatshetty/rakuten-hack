@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { FormsModule } from '@angular/forms';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -48,6 +49,8 @@ import { ProductReviewComponent } from './components/product-review/product-revi
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './/app-routing.module';
 import { ProductSummaryComponent } from './components/product-summary/product-summary.component';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { BigChainRestService } from './rest/big-chain-rest.service';
 
 
 @NgModule({
@@ -96,9 +99,9 @@ import { ProductSummaryComponent } from './components/product-summary/product-su
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule, AppRoutingModule
+    MatTreeModule, AppRoutingModule, HttpClientModule, FormsModule
   ],
-  providers: [],
+  providers: [BigChainRestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
