@@ -62,8 +62,10 @@ export class ProductSummaryComponent implements OnInit {
         date:""
       },
       asset: {
+        data: {
           type: "FtfTutorialAsset",
           item: this.review
+        }
       }
     }
 
