@@ -16,4 +16,9 @@ export class ProductSummaryComponent implements OnInit {
       this.product =  JSON.parse(params["product"]);
     });
   }
+
+  arrayOne(n: number): any[] {
+    return Array(n);
+  }
+
 }
