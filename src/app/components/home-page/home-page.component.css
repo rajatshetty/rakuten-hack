@@ -6,3 +6,7 @@
   right: 0;
   background: #eee;
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}

@@ -1,13 +1,22 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">Responsive App</h1>
+    <mat-toolbar-row>
+      <button mat-icon-button ><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">Rakuten shopping</h1>
+      <span class="example-spacer"></span>
+      <mat-form-field class="example-form-field">
+        <input matInput type="text" />
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-toolbar-row>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <mat-sidenav opened="true" disableClose="true" [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="100">
       <mat-nav-list>
         <a mat-list-item routerLink=".">Clothing</a>
         <a mat-list-item routerLink="." >Electronics</a>
@@ -16,11 +25,8 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content>
-      <p> Sample content</p>
-      <p> Sample content</p>
-      <p> Sample content</p>
-      <p> Sample content</p>
+    <mat-sidenav-content style="height:1009px">
+   <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -43,13 +43,22 @@ import {
   MatTreeModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { ProductReviewComponent } from './components/product-review/product-review.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './/app-routing.module';
+import { ProductSummaryComponent } from './components/product-summary/product-summary.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     HomePageComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    SearchBarComponent,
+    ProductReviewComponent,
+    ProductSummaryComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
@@ -87,8 +96,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
-
+    MatTreeModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
